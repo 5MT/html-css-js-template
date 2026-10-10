@@ -1,6 +1,6 @@
-// ゲーム画面とキャラクター画像をHTMLから取得する
-const gameScreen = document.querySelector(".game-screen");
-const hachiwareImage = document.querySelector(".game-screen img");
+// 表示領域とキャラクター画像をHTMLから取得する
+const stage = document.querySelector(".stage");
+const hachiwareImage = document.querySelector(".stage img");
 
 // 画像を移動させる幅と、元の位置へ戻す時間を決める
 const GAME_SETTINGS = Object.freeze({
@@ -69,7 +69,7 @@ function handleKeyDown(event) {
   moveImage(event.key);
 }
 
-// ゲーム画面と画像が存在した場合だけ、キー入力を待つ
-if (gameScreen && hachiwareImage) {
+// 表示領域と画像が存在した場合だけ、キー入力を待つ
+if (stage && hachiwareImage) {
   window.addEventListener("keydown", handleKeyDown);
 }
