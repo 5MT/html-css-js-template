@@ -5,14 +5,15 @@ const stage = document.querySelector(".stage");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x000000);
 
-// 視野角、画面の縦横比、描画する距離の範囲を指定する
+// 透視投影カメラを作る。引数は順に、視野角、縦横比、描画する最短距離、最長距離
 const camera = new THREE.PerspectiveCamera(
   75,
   stage.clientWidth / stage.clientHeight,
   0.1,
   1000,
 );
-camera.position.z = 5;
+camera.position.set(2, 2, 5);
+camera.lookAt(0, 0, 0);
 
 // アンチエイリアスを有効にした描画器を作り、ステージに追加する
 const renderer = new THREE.WebGLRenderer({ antialias: true });
