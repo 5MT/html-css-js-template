@@ -1,0 +1,80 @@
+/* すべての要素の幅・高さを、枠線を含めて扱う */
+* {
+  box-sizing: border-box;
+}
+
+/* ページ全体の背景・文字色・中央配置を設定する */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* ページの最大幅と余白を設定する */
+.page {
+  width: min(100% - 2rem, 48rem);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* タイトルの前後にある余白を設定する */
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+/* ページタイトルの大きさと太さを設定する */
+.page-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ゲーム画面を中央に配置し、背景色と枠線を設定する */
+.game-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 640px;
+  height: 480px;
+  margin: 0 auto;
+  border: 2px solid #0f172a;
+  background-color: #20b2aa;
+  box-sizing: border-box;
+}
+
+/* 画像が画面内からはみ出さないように、幅・高さを調整する */
+.game-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+/* 説明文の幅・色・行間を設定する */
+.description {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* 小さい画面でも、ページとゲーム画面を適切に表示する */
+@media (max-width: 680px) {
+  .page {
+    width: min(100% - 1rem, 48rem);
+    padding: 1rem 0;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .game-screen {
+    height: 360px;
+  }
+}
